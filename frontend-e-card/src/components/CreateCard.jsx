@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "./Input";
 import PlusButton from "./PlusButton";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +10,21 @@ export default function CreateCard() {
     const [interests, setInterests] = useState('');
     const [gituser, setGituser] = useState('');
     const [socials, setSocials] = useState([]);
+    const [imgUrl, setImgUrl] = useState('https://avatars.githubusercontent.com/u/9919?s=280&v=4')
+
+    useEffect(() => {
+        if(gituser){
+        fetch(`https://api.github.com/users/${gituser}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setImgUrl(data.avatar_url)
+            })
+        }
+    }, [gituser])
 
     const navigate = useNavigate();
 
-    const card = { name, description, interests, gituser, socials };
+    const card = { name, description, interests, gituser, socials, imgUrl };
     
     const submitCard = async () => {
         if(name === "" || gituser === "" || description === "" || interests === "") return;

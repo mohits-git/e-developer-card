@@ -1,20 +1,7 @@
-import { useEffect, useState } from "react";
 import SocialsButtons from "./SocialsButton";
 
 export default function Card({ card }) {
-    const { name, description, interests, gituser } = card;
-    const { socials } = card;
-    const [imgUrl, setImgUrl] = useState('https://avatars.githubusercontent.com/u/9919?s=280&v=4')
-
-    useEffect(() => {
-        if(gituser){
-        fetch(`https://api.github.com/users/${gituser}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setImgUrl(data.avatar_url)
-            })
-        }
-    }, [gituser])
+    const { name, description, interests, gituser, imgUrl, socials} = card;
 
     const socialButtons = socials.map((social) => {
         return (

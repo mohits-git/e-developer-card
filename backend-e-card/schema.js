@@ -5,6 +5,7 @@ const schema = zod.object({
     description: zod.string(),
     interests: zod.string(),
     gituser : zod.string(),
+    imgUrl: zod.string(),
     socials: zod.array(zod.object({ social: zod.string(), url: zod.string() }))
 })
 

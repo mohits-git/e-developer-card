@@ -27,7 +27,7 @@ app.post('/api/card', async(req, res) => {
         const card = req.body.card;
         const response = cardSchema.safeParse(card);
         if(!response.success){
-            return res.sendStatus(400);
+            return res.status(200).json({error: true, success: false, message: "Invalid card data"});
         }
         await Card.create(card);
         res.send("Created :)")
