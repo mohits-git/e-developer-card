@@ -13,13 +13,15 @@ function App() {
     }, [])
 
   return (
-    <>
-    <div className='flex flex-col justify-center items-center'>
+      <>
+      <div className='flex justify-center'>
+      <div className='grid grid-cols-1 gap-1 lg:grid-cols-2'>
       {cards.map((card) => {
           return <Card key={card._id} card={card}/>
       })}
-    </div>
-    </>
+      </div>
+      </div>
+      </>
   )
 }
 
