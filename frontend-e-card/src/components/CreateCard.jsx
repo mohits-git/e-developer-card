@@ -27,6 +27,7 @@ export default function CreateCard() {
 
     return (
         <div className="my-5 flex justify-center items-center">
+        <div className="flex-col justify-center items-center">
             <div className="flex justify-center w-[600px] border-2 rounded-lg border-black/30">
                 <div className="w-full p-2" action="">
                     <h1 className="ml-1 font-semibold text-lg text-slate-700">Add your card</h1>
@@ -61,7 +62,10 @@ export default function CreateCard() {
                     </div>
                 </div>
             </div> 
-        <Card card={card} />
+            <div className="flex justify-center w-[600px] rounded-lg">
+                <Card card={card} />
+            </div>
+        </div>
         </div> 
     )
 }
