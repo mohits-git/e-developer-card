@@ -1,5 +1,4 @@
-import { Link, NavLink} from 'react-router-dom';
-import Button from './Button';
+import { Link } from 'react-router-dom';
 export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
@@ -8,7 +7,7 @@ export default function Header() {
                     <Link to="/" className="flex items-center text-bold text-white">
                        <b>Developers-E-Card</b>
                     </Link>
-                    <div className="flex items-center lg:order-2">
+                    <div className="flex items-center">
                     <Link to="https://github.com/mohits-git/e-developer-card" className="text-white flex items-center">
                         <b>Github Repo</b>
                         <img
@@ -16,13 +15,6 @@ export default function Header() {
                             className="mr-2 mb-1 h-12 text-white rounded-full"
                             alt="github repository"
                         />
-                    </Link>
-                    </div>
-                    <div className="flex items-center lg:order-1 mr-15">
-                    <Link to='/create' className='flex items-center text-bold text-white'> 
-                        <Button>
-                            Let other developers know about you, Add your own card
-                        </Button>
                     </Link>
                     </div>
                 </div>
