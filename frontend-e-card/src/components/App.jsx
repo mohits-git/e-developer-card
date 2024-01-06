@@ -5,7 +5,7 @@ function App() {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/cards')
+        fetch('https://e-developer-card.onrender.com/api/cards')
             .then((res) => res.json())
             .then((data) => {
                 setCards(data);

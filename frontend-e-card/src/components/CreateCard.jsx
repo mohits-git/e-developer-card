@@ -17,7 +17,7 @@ export default function CreateCard() {
     
     const submitCard = async () => {
         if(name === "" || gituser === "" || description === "" || interests === "") return;
-        await fetch('http://localhost:3000/api/card', {
+        await fetch('https://e-developer-card.onrender.com/api/card', {
             method: "POST",
             body: JSON.stringify({ card }),
             headers: { "Content-type": 'application/json'}
