@@ -8,7 +8,7 @@ const cors = require('cors');
 const Card = require('./db')
 const cardSchema = require('./schema')
 
-app.use(cors({ origin: 'https://e-developer-card.vercel.app/' }))
+app.use(cors({ origin: 'https://e-developer-card.vercel.app' }))
 app.use(express.json());
 
 app.get('/api/cards', async (req, res) => {
