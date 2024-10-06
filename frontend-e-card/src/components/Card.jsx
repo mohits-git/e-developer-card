@@ -8,7 +8,7 @@ export default function Card({ card }) {
             <SocialsButtons key={social._id}><a href={social.url}>{social.social}</a></SocialsButtons>
         )
     })
-    socialButtons.unshift((<SocialsButtons key={0}><a href={`https://github.com/${gituser}`}>Github</a></SocialsButtons>))
+    socialButtons.unshift((<SocialsButtons key={"github"}><a href={`https://github.com/${gituser}`}>Github</a></SocialsButtons>))
 
     return (
             <div className="flex font-sans w-[500px] shadow-lg rounded-xl ml-5 mt-5 bg-slate-800 ">
@@ -21,7 +21,7 @@ export default function Card({ card }) {
                     </div>
                     </div>
                 </div>
-                
+
                 <div className="flex-auto py-3  px-6">
                     <h1 className="flex left-0 text-xl font-semibold text-slate-100 border-b-2 border-slate-700">{name}</h1>
                     <div className="flex left-0 text-md font-semibold text-slate-300 ">{description}</div>
